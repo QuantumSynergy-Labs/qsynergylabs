@@ -103,7 +103,7 @@ console.log(`
                                              ╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝                                        
 [INFO]: This is the QuantumSynergy Labs MGUI bot setup. This will help you create a new bot, delete a bot, or start a bot.
 [SUPPORT]: support@quantumsynergylabs.tech
-[DOCS]: https://docs.quantumsynergylabs.tech
+[DOCS]: https://quantumsynergylabs.tech
 [CREDITS]: All rights reserved. QuantumSynergy Labs 2023.
 ----------------------------------------------------------------------------------------------------------------------------------------------`);
 inquirer.prompt(introQuestions).then(async (answers) => {
@@ -134,15 +134,17 @@ inquirer.prompt(introQuestions).then(async (answers) => {
                         name: answers.name,
                         token: answers.token,
                         clientID: answers.clientID,
-                        devID: answers.devID,
-                        mongoURI: answers.mongoURI,
-                        customerID: answers.customerID,
+                        devs: answers.devID,
+                        mongodb: answers.mongoURI,
+                        footerText: "By: QuantumSynergy Labs",
+                        footerImage: "https://github.com/QuantumSynergy-Labs.png",
+                        customerId: answers.customerID,
                         testServer: answers.testServer
                     };
                     fs.writeFileSync(path.join(__dirname, 'config.json'), JSON.stringify(newConfig, null, 4));
 
                     // Git clone command
-                    const command = `git clone https://github.com/notcarlrdev/notcarlrdev.git`
+                    const command = `git clone https://github.com/QuantumSynergy-Labs/QuantumBot-MGUI.git`
                     exec(command, (error, stdout, stderr) => {
                         if (error) {
                             console.error(`\x1b[31m[${getTimestamp()}][ERROR]:\x1b[0m Error cloning the repo. Please try again.`);
