@@ -1,0 +1,17 @@
+{
+  "name": "test-qsynergy",
+  "version": "1.0.0",
+  "description": "This is the main installer app for QuantumnSynergy Labs discord bot. The release of setup file for QuantumnSynergy Webbased is launching very soon!",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "test-qsynergy": "./index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^9.2.10"
+  }
+}
